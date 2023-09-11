@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <head>
-    <title>{{ title }}</title>
-    <link rel="stylesheet" ref="{{ url_for('static', filename='home.css') }}">
+    <title>Festival</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>{{ title }}</h1>
-    <ul>
-        {% for x in names %}
-        <li>{{ x }}</li>
-        {% endfor %}
-    </ul>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="../static/img/affiche.mp4" type="video/mp4">
+            <!-- Vous pouvez ajouter d'autres formats vidéo ici pour la compatibilité avec différents navigateurs -->
+        </video>
+        <header class="header">
+            <nav class="nav">
+                <ul class="liste-nav">
+                    <li><a href="#" class="active">Accueil</a></li>
+                    <li><a href="{{ url_for('programmation') }}">Programmation</a></li>
+                    <li><a href="#">Billeterie</a></li>
+                    <li><a href="#">Plan du festival</a></li>
+                    <li><a href="#">Association</a></li>
+                    <li><a href="#">Boutique</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="navbarMobile">
+                <button id="menuToggle"><img src="../static/img/menu.png" alt="logo du menu"></button>
+                <button id="croixToggle"><img src="../static/img/croix-menu.png" alt="logo du menu"></button>
+                <div id="menuButton">
+                    <div id="overlay" class="overlay">
+                        <div id="menu" class="menu">
+                            <ul>
+                                <li id="nav-elem-1"><a href="#" class="active">Accueil</a></li>
+                                <li id="nav-elem-2"><a href="#">Programmation</a></li>
+                                <li id="nav-elem-3"><a href="#">Billeterie</a></li>
+                                <li id="nav-elem-4"><a href="#">Plan festival</a></li>
+                                <li id="nav-elem-5"><a href="#">Association</a></li>
+                                <li id="nav-elem-6"><a href="#">Boutique</a></li>
+                                <li id="nav-elem-7"><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <h1 class="titre">Festival Orléans</h1>
+            <div class="date-festival-left">
+                <p>17.18.19 mai 2024</p>
+            </div>
+            <div class="date-festival-right">
+                <p>17.18.19 mai 2024</p>
+            </div>
+        </header>
+    </div>
+    <section class="section-info">
+        <h2 class="titre-info">Notre festival en quelque mot</h2>
+        <p>90.000 participants l'annee 2023</p>
+    </section>
+    <footer class="footer-home">
+        <p>test</p>
+    </footer>
+    <script src="../static/menu.js"></script>
 </body>
 </html>

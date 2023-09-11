@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Festival</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='programmation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titre">{{ title }}</h1>
+        <nav class="nav">
+            <ul class="liste-nav">
+                <li><a href="{{ url_for('index') }}">Acceuil</a></li>
+                <li><a href="#">Programmation</a></li>
+                <li><a href="#">Billeterie</a></li>
+                <li><a href="#">Plan du festival</a></li>
+                <li><a href="#">Association</a></li>
+                <li><a href="#">Boutique</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="artiste-prog">
+        <ul class="liste-artiste">
+            {% for i in artiste%}
+            <section class="section-artiste">
+                <img src="{{ i['photoArtiste'] }}">
+                <li id="nom-groupe">{{ i['nomGroupe'] }}</li>
+                <li id="style-musicale">{{ i['styleMusicale'] }}</li>
+                <li id="desc-Artiste">{{ i['descArtiste'] }}</li>
+            </section>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
