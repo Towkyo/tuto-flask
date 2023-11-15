@@ -1,4 +1,4 @@
 from .app import app
-import views
-import models
-import commands
+import festIUTO.views
+import festIUTO.models
+import festIUTO.commands
